@@ -22,8 +22,22 @@ It's also worth quoting
 [Trevor King]([https://github.com/swcarpentry/python-novice-](https://github.com/swcarpentry/python-novice-)
 gapminder/issues/22#issuecomment-182573516)'s
 comment about online search:
-"If you find anything,
-other folks were confused enough to bother with a blog or Stack Overflow post,
-so it's probably not trivial."
+"If you find anything, other folks were confused enough to bother with a blog or 
+Stack Overflow post, so it's probably not trivial."
 
+
+## Maintenance notes
+
+Some tips and tricks, and explanations of various points.
+
+### General points
+
+ - You can leave comments using HTML comment blocks `<!-- Comment -->`, which isn't rendered.
+ Use this to explain code or points within the lesson.
+ <!-- Here's a comment! -->
+ - 
+
+### Markdown and markup
+ - the `<kbd>` tag is the keyboard command. For example, `<kbd>Enter</kbd>` renders
+ as <kbd>Enter</kbd>.
 

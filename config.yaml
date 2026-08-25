@@ -21,13 +21,13 @@ keywords: 'software, data, lesson, The Carpentries'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'stable'
+life_cycle: 'beta'
 
 # License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/swcarpentry/python-novice-gapminder'
+source: 'https://github.com/qcif-training/python-novice-gapminder'
 
 # Default branch of your lesson
 branch: 'main'
@@ -58,7 +58,7 @@ contact: 'team@carpentries.org'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - 01-run-quit.md
 - 02-variables.md
 - 03-types-conversion.md
@@ -81,13 +81,13 @@ episodes:
 - 20-feedback.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #

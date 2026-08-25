@@ -36,12 +36,24 @@ Some points worth highlighting:
 - [PEP8](https://www.python.org/dev/peps/pep-0008):
   a style guide for Python that discusses topics such as how to name variables,
   how to indent your code,
-  how to structure your `import` statements,
-  etc.
-  Adhering to PEP8 makes it easier for other Python developers to read and understand your code, and to understand what their contributions should look like.
-- To check your code for compliance with PEP8, you can use the [pycodestyle application](https://pypi.org/project/pycodestyle/) and tools like the [black code formatter](https://github.com/psf/black) can automatically format your code to conform to PEP8 and pycodestyle (a Jupyter notebook formatter also exists [nb\_black](https://github.com/dnanhkhoa/nb_black)).
-- Some groups and organizations follow different style guidelines besides PEP8. For example, the [Google style guide on Python](https://google.github.io/styleguide/pyguide.html) makes slightly different recommendations. Google wrote an application that can help you format your code in either their style or PEP8 called [yapf](https://github.com/google/yapf/).
-- With respect to coding style, the key is *consistency*. Choose a style for your project be it PEP8, the Google style, or something else and do your best to ensure that you and anyone else you are collaborating with sticks to it. Consistency within a project is often more impactful than the particular style used. A consistent style will make your software easier to read and understand for others and for your future self.
+  how to structure your `import` statements, etc.
+  Adhering to PEP8 makes it easier for other Python developers to read and understand your code, 
+  and to understand what their contributions should look like.
+- To check your code for compliance with PEP8, you can use the 
+  [pycodestyle application](https://pypi.org/project/pycodestyle/) and tools like 
+  the [black code formatter](https://github.com/psf/black) can automatically 
+  format your code to conform to PEP8 and pycodestyle (a Jupyter notebook formatter 
+  also exists [nb\_black](https://github.com/dnanhkhoa/nb_black)).
+- Some groups and organizations follow different style guidelines besides PEP8. 
+  For example, the [Google style guide on Python](https://google.github.io/styleguide/pyguide.html) 
+  makes slightly different recommendations. Google wrote an application that can 
+  help you format your code in either their style or PEP8 
+  called [yapf](https://github.com/google/yapf/).
+- With respect to coding style, the key is *consistency*. Choose a style for your 
+  project be it PEP8, the Google style, or something else and do your best to 
+  ensure that you and anyone else you are collaborating with sticks to it. 
+  Consistency within a project is often more impactful than the particular style used. 
+  A consistent style will make your software easier to read and understand for others and for your future self.
 
 ## Use assertions to check for internal errors.
 
@@ -54,11 +66,17 @@ def calc_bulk_density(mass, volume):
     return mass / volume
 ```
 
-If the assertion is `False`, the Python interpreter raises an `AssertionError` runtime exception. The source code for the expression that failed will be displayed as part of the error message. To ignore assertions in your code run the interpreter with the '-O' (optimize) switch. Assertions should contain only simple checks and never change the state of the program. For example, an assertion should never contain an assignment.
+If the assertion is `False`, the Python interpreter raises an `AssertionError` 
+runtime exception. The source code for the expression that failed will be displayed 
+as part of the error message. To ignore assertions in your code run the interpreter with 
+the '-O' (optimize) switch. Assertions should contain only simple checks and never 
+change the state of the program. For example, an assertion should never contain an assignment.
 
 ## Use docstrings to provide builtin help.
 
-If the first thing in a function is a character string that is not assigned directly to a variable, Python attaches it to the function, accessible via the builtin help function. This string that provides documentation is also known as a *docstring*.
+If the first thing in a function is a character string that is not assigned directly 
+to a variable, Python attaches it to the function, accessible via the builtin help 
+function. This string that provides documentation is also known as a *docstring*.
 
 ```python
 def average(values):
