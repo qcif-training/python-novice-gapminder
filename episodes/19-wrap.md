@@ -41,6 +41,9 @@ turn out to be anything but when we have to explain them precisely.
   as well as the sections on [NumPy](https://stackoverflow.com/questions/tagged/numpy?tab=Votes),
   [SciPy](https://stackoverflow.com/questions/tagged/scipy?tab=Votes), and
   [Pandas](https://stackoverflow.com/questions/tagged/pandas?tab=Votes).
+  
+- [W3Schools](https://www.w3schools.com/python/) has an extensive and interactive
+  Python tutorial freely available.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 

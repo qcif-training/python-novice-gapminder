@@ -47,13 +47,10 @@ a[target="_blank"]:not(.no-external-icon)::after {
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Launch the JupyterLab server.
+- Launch an integrated development environment (IDE)
 - Create a new Python script.
-- Create a Jupyter notebook.
-- Shutdown the JupyterLab server.
-- Understand the difference between a Python script and a Jupyter notebook.
-- Create Markdown cells in a notebook.
-- Create and run Python cells in a notebook.
+- Understand the difference between a script and a code cell.
+- Create and run Python cells in a script.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -62,6 +59,14 @@ a[target="_blank"]:not(.no-external-icon)::after {
 - How can I run Python programs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+To run Python, we will be using an integrated development environment (IDE). An IDE
+is a software program that combines commonly used development tools to provide a 
+helpful environment for writing, editing, and running code. Examples of IDEs include
+[Spyder][spyder], [Visual Studio Code][vs-code], and [JupyterLab][jupyterlab].
+
+For this workshop, we will be using **Spyder** 
+
 
 To run Python, we are going to use [Jupyter Notebooks][jupyter]{target="_blank"} via 
 [JupyterLab][jupyterlab]{target="_blank"} for the remainder of this workshop. 
@@ -602,7 +607,8 @@ Practice closing and restarting the JupyterLab server.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-
+[spyder]: https://www.spyder-ide.org/
+[vs-code]: https://code.visualstudio.com/
 [jupyterlab]: https://jupyterlab.readthedocs.io/en/stable/
 [jupyterlab-ui]: https://jupyterlab.readthedocs.io/en/stable/user/interface.html
 [jupyterlab-overview]: https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#overview
