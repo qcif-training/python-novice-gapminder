@@ -68,15 +68,15 @@ helpful environment for writing, editing, and running code. Examples of IDEs inc
 For this workshop, we will be using **Spyder** 
 
 
-To run Python, we are going to use [Jupyter Notebooks][jupyter]{target="_blank"} via 
-[JupyterLab][jupyterlab]{target="_blank"} for the remainder of this workshop. 
+To run Python, we are going to use [Jupyter Notebooks][jupyter] via 
+[JupyterLab][jupyterlab] for the remainder of this workshop. 
 Jupyter notebooks are common in data science and 
 visualization and serve as a convenient common-denominator experience for running 
 Python code interactively where we can easily view and share the results of our Python code.
 
 There are other ways of editing, managing, and running code. Software developers 
-often use an integrated development environment (IDE) like [PyCharm](https://www.jetbrains.com/pycharm/){target="_blank"} 
-or [Visual Studio Code](https://code.visualstudio.com/){target="_blank"}, or 
+often use an integrated development environment (IDE) like [PyCharm](https://www.jetbrains.com/pycharm/) 
+or [Visual Studio Code](https://code.visualstudio.com/), or 
 text editors like Vim or Emacs, to create and edit their Python programs. 
 After editing and saving your Python programs you can execute those programs within 
 the IDE itself or directly on the command line. In contrast, Jupyter notebooks let 
@@ -96,7 +96,7 @@ Each notebook contains one or more cells that contain code, text, or images.
 
 ## Getting Started with JupyterLab
 
-JupyterLab is an application server with a web user interface from [Project Jupyter][jupyter]{target="_blank"} that
+JupyterLab is an application server with a web user interface from [Project Jupyter][jupyter] that
 enables one to work with documents and activities such as Jupyter notebooks, text editors, terminals,
 and even custom components in a flexible, integrated, and extensible manner. JupyterLab requires a
 reasonably up-to-date browser (ideally a current version of Chrome, Safari, or Firefox); Internet
@@ -118,7 +118,7 @@ the initial connection to download and install Anaconda and JupyterLab
 
 ## JupyterLab? What about Jupyter notebooks?
 
-JupyterLab is the [next stage in the evolution of the Jupyter Notebook][jupyterlab-overview]{target="_blank"}.
+JupyterLab is the [next stage in the evolution of the Jupyter Notebook][jupyterlab-overview].
 If you have prior experience working with Jupyter notebooks, then you will have a good idea of what to expect from JupyterLab.
 
 Experienced users of Jupyter notebooks interested in a more detailed discussion of the similarities and differences
@@ -163,7 +163,7 @@ $ jupyter lab
 ### Anaconda Navigator
 
 To start a JupyterLab server from Anaconda Navigator you must first 
-[start Anaconda Navigator (click for detailed instructions on macOS, Windows, and Linux)][anaconda-start-nav]{target="_blank"}. 
+[start Anaconda Navigator (click for detailed instructions on macOS, Windows, and Linux)][anaconda-start-nav]. 
 You can search for Anaconda Navigator via Spotlight on macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), the Windows search function (<kbd>Windows Logo Key</kbd>) or opening a terminal shell and executing the `anaconda-navigator` executable from the command line.
 
 After you have launched Anaconda Navigator, click the `Launch` button under JupyterLab. You may need
