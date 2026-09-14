@@ -14,9 +14,9 @@ Note that the <kbd>x</kbd> tags are HTML keyboard tags for rendering text as key
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Launch an integrated development environment (IDE)
-- Create a new Python script.
-- Understand the difference between a script and a code cell.
-- Create and run a Python script.
+- Create a new Python program.
+- Understand the difference between a program and a code cell.
+- Create and run a Python program.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -31,7 +31,7 @@ is a software program that combines commonly used development tools to provide a
 helpful environment for writing, editing, and running code. Examples of IDEs include
 [Spyder][spyder], [PyCharm][pycharm], [Visual Studio Code][vs-code], and [JupyterLab][jupyterlab].
 Developers also use text editors like Vim or Emacs, though they have less features. After editing
-and saving your Python scripts you can execute those scripts within the IDE itself or directly in the command
+and saving your Python program you can execute those programs within the IDE itself or directly in the command
 line.
 
 For this workshop, we will be using **Spyder**. Spyder is a powerful and commonly used IDE
@@ -101,11 +101,9 @@ are shared across different integrated development environments (IDEs).
 
 Upon opening, the Spyder interface consists of a top navigation bar and several different panes.
 These panes include  the main editor pane, a multi-section tabbed pane consisting of the Help, 
-Variable Explorer, Debugger, Plots, and Files panes, and a console pane.
-
-The [JupyterLab Interface][jupyterlab-ui]
-consists of the Menu Bar, a collapsable Left Side Bar, and the Main Work Area which contains tabs
-of documents and activities.
+Variable Explorer, Debugger, Plots, and Files panes, and an IPython console and History pane. Each of the panes can be resized
+by clicking on the edge of the point and dragging. Likewise, panes can be detached and moved, hidden,
+and new panes can be added.
 
 ### Menu Bar
 
@@ -117,7 +115,7 @@ menus are included by default.
 - **Edit:** Actions related to editing documents and other activities such as *Undo*, *Cut*, *Copy*, *Paste*, etc.
 - **Search**:
 - **Source:**
-- **Run:** Actions for running code in different activities such as scripts and code blocks.
+- **Run:** Actions for running code in different activities such as programs and code blocks.
 - **Debug:** Actions relating to running code in debug mode, which is used to test code and find any issues.
 - **Consoles:** Actions for managing code consoles. Consoles in Spyder will be explained in more detail below.
 - **Projects:** Actions relating to creating, loading, and using Projects in Spyder.
@@ -125,7 +123,93 @@ menus are included by default.
 - **View:** Actions that alter the appearance of Spyder.
 - **Help:** Shows links and resources for getting help with Spyder, and how to report an issue.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+
+### Editor pane
+
+The editor pane is where you can write code into Python programs. It can contain multiple tabs,
+each with its own program. At the top of the editor pane the path to the selected file is shown.
+On the left, the line number for each line is shown. At the top right is an options button
+which contains options for controlling editor tabs or navigating to specific lines. A vertical
+line is also shown going down the editor pane; this shows the width of 80 characters,
+which is a standard convention for suggested maximum line length in Python code..
+
+
+
+<p align='center'>   <img alt="Spyder editor pane" src="fig/0_spyder_editor_pane.png" width="250"/></p>
+
+
+:::::::::::::::::::::::::::::::::::::: instructor
+### Directories and folders
+You may need to explain the usage of the term 'directory' instead of 'folder' for some participants.
+Folders and directories generally refer to the same thing, though the term directory is the more technical
+term from command-line systems, and is the older term. 'Folder' was introduced as a visual term 
+for graphical interfaces. Both terms generally refer to the same thing and can be used interchangeably, 
+though it's best to be consistent. Do note though that some 'Folders' in systems like Windows are not directories,
+but rather virtual objuects such as the Control Panel or Recycle Bin, and do not map to a directory on the drive.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Files pane
+The files pane is a filesystem and directory browser built into Spyder. You can use this pane to view and filter 
+files by type and extension, open them directly into the editor, create or delete directories, set the working directory,
+and perform many other common operations on files and directories.
+
+
+### Help pane
+The help pane is used to show help messages and information on any Python objects.
+You can get help when coding by pressing <kdb>Ctrl</kbd> + <kbd>I</kbd> in front of it,
+either in the Editor or in the Console.
+
+
+
+### Variable explorer pane
+The Variable Explorer pane shows the values, types, and size of any variables created in the current Python
+session. This can include variables created from multiple different programs or directly in the console.
+
+Double clicking on variables allows you to edit the value of the variable. If the variable is a data structure
+like a list, dictionary, or dataframe, you can double click the variable value to open a new window where you can 
+view and edit the values of the variable.
+
+Variables edited in the variable explorer will not affect variables created in the editor, but can affect
+variables called directly in the console. We will go into variables in more detail in the [next chapter](./02-run-quit.md).
+
+<p align='center'>   <img alt="Spyder Variable Explorer" src="fig/0_spyder_variable_explorer.png" width="250"/></p>
+
+
+### Debugger pane
+The debugger pane allows you to view any issues or errors within your code, view the source codes
+where issues have arisen, and control the workflow of debugging Python code.
+
+### Plots pane
+The plots pane is where any visualisations can be shown. If any plots are generated they can be viewed,
+saved, or deleted in this pane.
+
+By default, Spyder has the option *Mute inline plotting* active; meaning that any plots are shown in
+the Plots pane. If turned off, plots can instead be shown in the active console, or shown in a separate 
+window.
+
+### IPython Console pane
+The console pane (or IPython Console) allows you to execute code directly inside the Python interpreter.
+Like the editor pane, the console pane can hold multiple tabs, each representing a different terminal.
+
+
+
+:::::::::::::::::::::::::::::::::: callout
+### Other panes
+
+Spyder contains other panes which are not shown by default, but can be activated by going to
+***View > Panes***, and clicking on the name of the pane. Notable examples include the 
+*Outline pane* which allows you to navigate to sections within your code, the 
+*Find pane* which holds a text search function, and the *Project pane* which holds
+information about a current Spyder project, if one is active.
+You can also use this section to hide currently shown panes.
+
+:::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+:::::::::::::::::::::::::::::::::::::::::  spoiler
 
 ## Kernels and consoles
 
@@ -135,7 +219,7 @@ When opening Spyder, it should automatically connect to a Python kernel. If we w
 also connect to different Python kernels should we wish to run a different version of Python.
 
 When we run code, it is run through the console, which connects to the kernel. We can either run code through
-a script, or by entering it into the console directly. We can also delete and create new consoles,
+a program, or by entering it into the console directly. We can also delete and create new consoles,
 open consoles in specific coding environments, or open consoles that have remote connections to
 external servers.
 
@@ -153,46 +237,36 @@ conda update spyder-kernels
 ```
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-A screenshot of the default Menu Bar is provided below.
 
-<p align='center'>   <img alt="JupyterLab Menu Bar" src="fig/0_jupyterlab_menu_bar.png" width="750"/>
-</p>
 
-### Left Sidebar
+## Creating a Python program
 
-The left sidebar contains a number of commonly used tabs, such as a file browser (showing the
-contents of the directory where the JupyterLab server was launched), a list of running kernels
-and terminals, the command palette, and a list of open tabs in the main work area. A screenshot of
-the default Left Side Bar is provided below.
-
-<p align='center'>   <img alt="JupyterLab Left Side Bar" src="fig/0_jupyterlab_left_side_bar.png" width="250"/>
-</p>
-
-The left sidebar can be collapsed or expanded by selecting "Show Left Sidebar" in the View menu or
-by clicking on the active sidebar tab.
-
-### Main Work Area
-
-The main work area in JupyterLab enables you to arrange documents (notebooks, text files, etc.)
-and other activities (terminals, code consoles, etc.) into panels of tabs that can be resized or
-subdivided. A screenshot of the default Main Work Area is provided below.
-
-If you do not see the Launcher tab, click the blue plus sign under the "File" and "Edit" menus and it will appear.
-
-<p align='center'>   <img alt="JupyterLab Main Work Area" src="fig/0_jupyterlab_main_work_area.png" width="750"/>
-</p>
-
-Drag a tab to the center of a tab panel to move the tab to the panel. Subdivide a tab panel by
-dragging a tab to the left, right, top, or bottom of the panel. The work area has a single current
-activity. The tab for the current activity is marked with a colored top border (blue by default).
-
-## Creating a Python script
-
+To start writing a new Python program, 
 - To start writing a new Python program click the Text File icon under the *Other* header in the Launcher tab of the Main Work Area.
   - You can also create a new plain text file by selecting the *New -> Text File* from the *File* menu in the Menu Bar.
-- To convert this plain text file to a Python program, select the *Save File As* action from the *File* menu in the Menu Bar and give your new text file a name that ends with the `.py` extension.
+- To convert this plain text file to a Python program, select the *Save File As* action from the *File* menu in the Menu Bar 
+  and give your new text file a name that ends with the `.py` extension.
   - The `.py` extension lets everyone (including the operating system) know that this text file is a Python program.
   - This is convention, not a requirement.
+
+
+
+
+
+## Creating code cells
+In Spyder we can create and run code cells. A code cell is an isolated piece of code that can be run individually, regardless of its
+place in the program, or can be run as part of the program as a whole.
+
+We can define the start of a new code cell using the hash symbol (`#`) followed by two percent symbols (`%`), as below:
+
+```python
+#%%
+
+```
+A code cell continues on until a new code cell is defined. You can have as many code cells as you like, or none at all.
+
+Note that code cells are a feature used in Spyder (as well as some other IDEs); it is not a core Python function.
+
 
 ## Creating a Jupyter Notebook
 
@@ -209,6 +283,11 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 
 <p align='center'>   <img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
 </p>
+
+
+
+
+
 
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -286,15 +365,6 @@ Python returns the output of the last calculation.
 
 
 
-## Closing JupyterLab
-
-- From the Menu Bar select the "File" menu and then choose "Shut Down" at the bottom of the dropdown menu. You will be prompted to confirm that you wish to shutdown the JupyterLab server (don't forget to save your work!). Click "Shut Down" to shutdown the JupyterLab server.
-- To restart the JupyterLab server you will need to re-run the following command from a shell.
-
-```
-$ jupyter lab
-```
-
 
 
 
@@ -311,7 +381,7 @@ $ jupyter lab
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Python scripts are plain text files.
+- Python programs are plain text files.
 - Use Spyder for editing and running Python.
 - The Notebook has Command and Edit modes.
 - Use the keyboard and mouse to select and edit cells.

@@ -145,10 +145,13 @@ You can additionally create a new Anaconda environment from where you can instal
 
 - Open Anaconda prompt
 - Enter this command to create a new Conda environment: `conda create -c conda-forge -n spyder-env spyder numpy scipy pandas matplotlib`
-    - This creates an environment with the following packages installed: Spyder (to run the IDE), Pandas, Numpy, Scipy, and MatPlotLib.
+    - This creates an environment called 'spyder-env' and installs the packages Spyder (to run the IDE), Pandas, Numpy, Scipy, and MatPlotLib.
+    - The `-c conda-forge` tells conda to use a specific distribution to source these packages from. Conda-source is an open-source repository
+    of packages that is regularly kept up-to-date.
 - Enter `y` to accept the environment installation.
 - Once installed, enter the command `conda activate spyder-env` to activate the environment.
-- If you wish to install any other packages, use the command `conda install [packagename]`.
+- If you wish to install any other packages, use the command `conda install [packagename]`. For example, `conda install seaborn` would install
+the 'seaborn' package.
 - Once finished, you can exit the environment by closing the Anaconda prompt, or by using the command `conda deactivate`.
 
 ::::::::::::::::::::::::::::::::::::::::::
