@@ -63,70 +63,36 @@ a[target="_blank"]:not(.no-external-icon)::after {
 To run Python, we will be using an integrated development environment (IDE). An IDE
 is a software program that combines commonly used development tools to provide a 
 helpful environment for writing, editing, and running code. Examples of IDEs include
-[Spyder][spyder], [Visual Studio Code][vs-code], and [JupyterLab][jupyterlab].
+[Spyder][spyder], [PyCharm](pycharm), [Visual Studio Code][vs-code], and [JupyterLab][jupyterlab].
 
-For this workshop, we will be using **Spyder** 
+For this workshop, we will be using **Spyder**. Spyder is a powerful and commonly used IDE
+with many features that can help users to develop, test, and explore code. Spyder's features
+include:
 
-
-To run Python, we are going to use [Jupyter Notebooks][jupyter] via 
-[JupyterLab][jupyterlab] for the remainder of this workshop. 
-Jupyter notebooks are common in data science and 
-visualization and serve as a convenient common-denominator experience for running 
-Python code interactively where we can easily view and share the results of our Python code.
-
-There are other ways of editing, managing, and running code. Software developers 
-often use an integrated development environment (IDE) like [PyCharm](https://www.jetbrains.com/pycharm/) 
-or [Visual Studio Code](https://code.visualstudio.com/), or 
-text editors like Vim or Emacs, to create and edit their Python programs. 
-After editing and saving your Python programs you can execute those programs within 
-the IDE itself or directly on the command line. In contrast, Jupyter notebooks let 
-us execute and view the results of our Python code immediately within the notebook.
-
-JupyterLab has several other handy features:
-
-- You can easily type, edit, and copy and paste blocks of code.
+- You can easily type, edit, copy, and paste blocks of code. Spyder also allows you to easily add
+  quotation marks, brackets, comment hashes, and indentation around blocks of code with a single click.
 - Tab complete allows you to easily access the names of things you are using
-  and learn more about them.
-- It allows you to annotate your code with links, different sized text, bullets, etc.
-  to make it more accessible to you and your collaborators.
-- It allows you to display figures next to the code that produces them
-  to tell a complete story of the analysis.
-
-Each notebook contains one or more cells that contain code, text, or images.
-
-## Getting Started with JupyterLab
-
-JupyterLab is an application server with a web user interface from [Project Jupyter][jupyter] that
-enables one to work with documents and activities such as Jupyter notebooks, text editors, terminals,
-and even custom components in a flexible, integrated, and extensible manner. JupyterLab requires a
-reasonably up-to-date browser (ideally a current version of Chrome, Safari, or Firefox); Internet
-Explorer versions 9 and below are *not* supported.
-
-JupyterLab is included as part of the Anaconda Python distribution. If you have not already
-installed the Anaconda Python distribution, see [the setup instructions](../learners/setup.md)
-for installation instructions.
-
-In this lesson we will run JupyterLab locally on our own machines so it will not require an internet connection besides
-the initial connection to download and install Anaconda and JupyterLab
-
-- Start the JupyterLab server on your machine
-- Use a web browser to open a special localhost URL that connects to your JupyterLab server
-- The JupyterLab server does the work and the web browser renders the result
-- Type code into the browser and see the results after your JupyterLab server has finished executing your code
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## JupyterLab? What about Jupyter notebooks?
-
-JupyterLab is the [next stage in the evolution of the Jupyter Notebook][jupyterlab-overview].
-If you have prior experience working with Jupyter notebooks, then you will have a good idea of what to expect from JupyterLab.
-
-Experienced users of Jupyter notebooks interested in a more detailed discussion of the similarities and differences
-between the JupyterLab and Jupyter notebook user interfaces can find more information in the
-[JupyterLab user interface documentation][jupyterlab-ui].
+  and learn more about then.
+- The variable explorer allows you to explore and view the variables that have been created
+  in a coding session.
+- Hovering your cursor over a variable or function gives you more information on it.
+- It allows you to display figures inside the code editor.
+- You can create code blocks that operate like the cells used in Jupyter notebooks.
+  These act like separate cells which can be run individually and in any order.
+- Spyder Projects allow you to create and load separate sessions for each project which will
+  remember their preferences and setups, easily allowing you to switch seamlessly between projects.
 
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+## Getting Started with Spyder
+
+Spyder is a locally run program that is supported in Windows, MacOS, and Linux. Spyder is included as part of the 
+Anaconda Python distribution, or can be installed by itself, and has a .
+If you have not already installed the Anaconda Python distribution and Spyder, please see
+[the setup instructions](../learners/setup.md) for installation instructions.
+
+
+
+
 
 ## Starting JupyterLab
 
@@ -616,7 +582,7 @@ Practice closing and restarting the JupyterLab server.
 [markdown]: https://en.wikipedia.org/wiki/Markdown
 [data_carpentry]: https://datacarpentry.org
 [anaconda-start-nav]: https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator
-
+[pycharm]: https://www.jetbrains.com/pycharm/
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
