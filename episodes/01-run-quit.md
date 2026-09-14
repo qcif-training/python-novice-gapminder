@@ -10,47 +10,13 @@ Note that the <kbd>x</kbd> tags are HTML keyboard tags for rendering text as key
 -->
 
 
-<!-- Styling to allow symbol on target="_blank" links  -->
-<style>
-/* Add an external-link icon to links that deliberately open in a new tab. */
-a[target="_blank"]:not(.no-external-icon)::after {
-  content: "";
-  display: inline-block;
-
-  /* Keep the icon small relative to the surrounding text. */
-  width: 0.75em;
-  height: 0.75em;
-  margin-left: 0.2em;
-
-  /* Use the link's own colour for the icon. */
-  background-color: currentColor;
-
-  /*
-   * The mask defines the familiar "arrow leaving a square" shape.
-   * Using a mask rather than a font means Font Awesome does not
-   * need to be installed or loaded.
-   */
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M14 3h7v7M10 14L21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5'/%3E%3C/svg%3E");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
-
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M14 3h7v7M10 14L21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5'/%3E%3C/svg%3E");
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-}
-</style>
-
-
-
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Launch an integrated development environment (IDE)
 - Create a new Python script.
 - Understand the difference between a script and a code cell.
-- Create and run Python cells in a script.
+- Create and run a Python script.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -63,7 +29,10 @@ a[target="_blank"]:not(.no-external-icon)::after {
 To run Python, we will be using an integrated development environment (IDE). An IDE
 is a software program that combines commonly used development tools to provide a 
 helpful environment for writing, editing, and running code. Examples of IDEs include
-[Spyder][spyder], [PyCharm](pycharm), [Visual Studio Code][vs-code], and [JupyterLab][jupyterlab].
+[Spyder][spyder], [PyCharm][pycharm], [Visual Studio Code][vs-code], and [JupyterLab][jupyterlab].
+Developers also use text editors like Vim or Emacs, though they have less features. After editing
+and saving your Python scripts you can execute those scripts within the IDE itself or directly in the command
+line.
 
 For this workshop, we will be using **Spyder**. Spyder is a powerful and commonly used IDE
 with many features that can help users to develop, test, and explore code. Spyder's features
@@ -92,45 +61,18 @@ If you have not already installed the Anaconda Python distribution and Spyder, p
 
 
 
-
-
-## Starting JupyterLab
-
-You can start the JupyterLab server through the command line or through an application called
-`Anaconda Navigator`. Anaconda Navigator is included as part of the Anaconda Python distribution.
-
-### macOS - Command Line
-
-To start the JupyterLab server you will need to access the command line through the Terminal.
-There are two ways to open Terminal on Mac.
-
-1. In your Applications folder, open Utilities and double-click on Terminal
-2. Press <kbd>Command</kbd> + <kbd>spacebar</kbd> to launch Spotlight. Type `Terminal` and then
-  double-click the search result or hit <kbd>Enter</kbd>
-
-After you have launched Terminal, type the command to launch the JupyterLab server.
-
-```bash
-$ jupyter lab
-```
-
-### Windows Users - Command Line
-
-To start the JupyterLab server you will need to access the Anaconda Prompt.
-
-Press <kbd>Windows Logo Key</kbd> and search for `Anaconda Prompt`, click the result or press enter.
-
-After you have launched the Anaconda Prompt, type the command:
-
-```bash
-$ jupyter lab
-```
+## Starting Spyder directly
+To start Spyder, go to your computers application browser and select Spyder. This works regardless
+of whether you installed it standalone or through Anaconda.
+ 
 
 ### Anaconda Navigator
 
-To start a JupyterLab server from Anaconda Navigator you must first 
+To start Spyder from the Anaconda Navigator you must first 
 [start Anaconda Navigator (click for detailed instructions on macOS, Windows, and Linux)][anaconda-start-nav]. 
-You can search for Anaconda Navigator via Spotlight on macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), the Windows search function (<kbd>Windows Logo Key</kbd>) or opening a terminal shell and executing the `anaconda-navigator` executable from the command line.
+You can search for Anaconda Navigator via Spotlight on macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), 
+the Windows search function (<kbd>Windows Logo Key</kbd>) or opening a terminal shell and 
+executing the `anaconda-navigator` executable from the command line.
 
 After you have launched Anaconda Navigator, click the `Launch` button under JupyterLab. You may need
 to scroll down to find it.
@@ -139,20 +81,27 @@ Here is a screenshot of an Anaconda Navigator page similar to the one that shoul
 or Windows.
 
 <p align='center'>
-  <img alt="Anaconda Navigator landing page" src="fig/0_anaconda_navigator_landing_page.png" width="750"/>
+  <img alt="Anaconda Navigator landing page" src="fig/0_anaconda_navigator_landing_spyder.png" width="750"/>
 </p>
 
-And here is a screenshot of a JupyterLab landing page that should be similar to the one that opens in your
-default web browser after starting the JupyterLab server on either macOS or Windows.
 
-<p align='center'>
-  <img alt="JupyterLab landing page" src="fig/0_jupyterlab_landing_page.png" width="750"/>
-</p>
+### Anaconda Prompt
+To start Spyder from the command line using Anaconda Prompt, follow these steps:
 
-## The JupyterLab Interface
+- Launch Anaconda Prompt
+  - [OPTIONAL]: If using a custom environment, activate it with `conda activate [environment_name]`
+- Launch Spyder by entering the command `spyder`.
 
-JupyterLab has many features found in traditional integrated development environments (IDEs) but
-is focused on providing flexible building blocks for interactive, exploratory computing.
+
+
+## The Spyder Interface
+
+Spyder has many features designed to improve the coding and development experience, many of which
+are shared across different integrated development environments (IDEs).
+
+Upon opening, the Spyder interface consists of a top navigation bar and several different panes.
+These panes include  the main editor pane, a multi-section tabbed pane consisting of the Help, 
+Variable Explorer, Debugger, Plots, and Files panes, and a console pane.
 
 The [JupyterLab Interface][jupyterlab-ui]
 consists of the Menu Bar, a collapsable Left Side Bar, and the Main Work Area which contains tabs
@@ -160,32 +109,48 @@ of documents and activities.
 
 ### Menu Bar
 
-The Menu Bar at the top of JupyterLab has the top-level menus that expose various actions
+The Menu Bar at the top of Spyder has the top-level menus that expose various actions
 available in JupyterLab along with their keyboard shortcuts (where applicable). The following
 menus are included by default.
 
-- **File:** Actions related to files and directories such as *New*, *Open*, *Close*, *Save*, etc. The *File* menu also includes the *Shut Down* action used to shutdown the JupyterLab server.
+- **File:** Actions related to files and directories such as *New*, *Open*, *Close*, *Save*, etc. The *File* menu also includes the *Exit* and *Restart* actions used to shutdown or restart Spyder,.
 - **Edit:** Actions related to editing documents and other activities such as *Undo*, *Cut*, *Copy*, *Paste*, etc.
-- **View:** Actions that alter the appearance of JupyterLab.
-- **Run:** Actions for running code in different activities such as notebooks and code consoles (discussed below).
-- **Kernel:** Actions for managing kernels. Kernels in Jupyter will be explained in more detail below.
-- **Tabs:** A list of the open documents and activities in the main work area.
-- **Settings:** Common JupyterLab settings can be configured using this menu. There is also an *Advanced Settings Editor* option in the dropdown menu that provides more fine-grained control of JupyterLab settings and configuration options.
-- **Help:** A list of JupyterLab and kernel help links.
+- **Search**:
+- **Source:**
+- **Run:** Actions for running code in different activities such as scripts and code blocks.
+- **Debug:** Actions relating to running code in debug mode, which is used to test code and find any issues.
+- **Consoles:** Actions for managing code consoles. Consoles in Spyder will be explained in more detail below.
+- **Projects:** Actions relating to creating, loading, and using Projects in Spyder.
+- **Tools:** Actions relating to controlling the setting and behaviour of Spyder. Notably includes the *Preferences* section, which has the detailed Spyder settings.
+- **View:** Actions that alter the appearance of Spyder.
+- **Help:** Shows links and resources for getting help with Spyder, and how to report an issue.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Kernels
+## Kernels and consoles
 
-The JupyterLab [docs](https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html)
-define kernels as "separate processes started by the server that runs your code in different programming languages and environments."
-When we open a Jupyter Notebook, that starts a kernel - a process - that is going to run the code.
-In this lesson, we'll be using the Jupyter ipython kernel which lets us run Python 3 code interactively.
+Spyder is able to run Python, including in separated code cells, by connecting to a kernel.
+A kernel is a separate process that can run dirrerent programming languages and environments.
+When opening Spyder, it should automatically connect to a Python kernel. If we wish, we can 
+also connect to different Python kernels should we wish to run a different version of Python.
 
-Using other Jupyter [kernels for other programming languages](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) would let us
-write and execute code in other programming languages in the same JupyterLab interface, like R, Java, Julia, Ruby, JavaScript, Fortran,
-etc.
+When we run code, it is run through the console, which connects to the kernel. We can either run code through
+a script, or by entering it into the console directly. We can also delete and create new consoles,
+open consoles in specific coding environments, or open consoles that have remote connections to
+external servers.
 
+
+Should you need to update or reinstall the kernels used by Spyder in a conda environment, use
+the following commands in Anaconda prompt:
+To install:
+```
+conda install conda-forge::spyder-kernels
+```
+
+To update:
+```
+conda update spyder-kernels
+```
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 A screenshot of the default Menu Bar is provided below.
@@ -245,16 +210,6 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 <p align='center'>   <img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
 </p>
 
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## How It's Stored
-
-- The notebook file is stored in a format called JSON.
-- Just like a webpage, what's saved looks different from what you see in your browser.
-- But this format allows Jupyter to mix source code, text, and images, all in one file.
-  
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -286,17 +241,7 @@ right, top, or bottom of the panel.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::  callout
 
-## Code vs. Text
-
-Jupyter mixes code and text in different types of blocks, called cells. We often use the term
-"code" to mean "the source code of software written in a language such as Python".
-A "code cell" in a Notebook is a cell that contains software;
-a "text cell" is one that contains ordinary prose written for human beings.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## The Notebook has Command and Edit modes.
 
@@ -310,152 +255,7 @@ a "text cell" is one that contains ordinary prose written for human beings.
   - The <kbd>z</kbd> key will undo your last cell operation (which could be a deletion, creation, etc).
 - All actions can be done using the menus, but there are lots of keyboard shortcuts to speed things up.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Command Vs. Edit
-
-In the Jupyter notebook page are you currently in Command or Edit mode?  
-Switch between the modes.
-Use the shortcuts to generate a new cell.
-Use the shortcuts to delete a cell.
-Use the shortcuts to undo the last cell operation you performed.
-
-:::::::::::::::  solution
-
-## Solution
-
-Command mode has a grey border and Edit mode has a blue border.
-Use <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>b</kbd> or <kbd>a</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>x</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>z</kbd>.
-
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-### Use the keyboard and mouse to select and edit cells.
-
-- Pressing the <kbd>Return</kbd> key turns the border blue and engages Edit mode, which allows
-  you to type within the cell.
-- Because we want to be able to write many lines of code in a single cell,
-  pressing the <kbd>Return</kbd> key when in Edit mode (blue) moves the cursor to the next line
-  in the cell just like in a text editor.
-- We need some other way to tell the Notebook we want to run what's in the cell.
-- Pressing <kbd>Shift</kbd>\+<kbd>Return</kbd> together will execute the contents of the cell.
-- Notice that the <kbd>Return</kbd> and <kbd>Shift</kbd> keys on the right of the keyboard are
-  right next to each other.
-
-### The Notebook will turn Markdown into pretty-printed documentation.
-
-- Notebooks can also render [Markdown][markdown].
-  - A simple plain-text format for writing lists, links,
-    and other things that might go into a web page.
-  - Equivalently, a subset of HTML that looks like what you'd send in an old-fashioned email.
-- Turn the current cell into a Markdown cell by entering the Command mode (<kbd>Esc</kbd>/gray)
-  and press the <kbd>M</kbd> key.
-- `In [ ]:` will disappear to show it is no longer a code cell and you will be able to write in
-  Markdown.
-- Turn the current cell into a Code cell by entering the Command mode (<kbd>Esc</kbd>/gray) and
-  press the <kbd>y</kbd> key.
-
-### Markdown does most of what HTML does.
-
-Table: Showing some markdown syntax and its rendered output.
-
-+---------------------------------------+------------------------------------------------+
-| Markdown code                         | Rendered output                                |
-+=======================================+================================================+
-+---------------------------------------+------------------------------------------------+
-| ```                                   | <p></p>                                        |
-| *   Use asterisks                     | -   Use asterisks                              |
-| *   to create                         | -   to create                                  |
-| *   bullet lists.                     | -   bullet lists.                              |
-| ```                                   |                                                |
-+---------------------------------------+------------------------------------------------+
-+---------------------------------------+------------------------------------------------+
-| ```                                   | <p></p>                                        |
-| 1.   Use numbers                      | 1.   Use numbers                               |
-| 1.   to create                        | 2.   to create                                 |
-| 1.   numbered lists.                  | 3.   numbered lists.                           |
-| ```                                   |                                                |
-+---------------------------------------+------------------------------------------------+
-+---------------------------------------+------------------------------------------------+
-| ```                                   | <p></p>                                        |
-| *  You can use indents                | - You can use indents                          |
-|   *  To create sublists               |   - To create sublists                         |
-|   *  of the same type                 |   - of the same type                           |
-| *  Or sublists                        | - Or sublists                                  |
-|   1. Of different                     |   1. Of different                              |
-|   1. types                            |   2. types                                     |
-| ```                                   |                                                |
-+---------------------------------------+------------------------------------------------+
-+---------------------------------------+------------------------------------------------+
-| ```                                   | <p></p>                                        |
-| # A Level-1 Heading                   | ## A Level-1 Heading                           |
-| ```                                   |                                                |
-+---------------------------------------+------------------------------------------------+
-+---------------------------------------+------------------------------------------------+
-| ```                                   | <p></p>                                        |
-| ## A Level-2 Heading (etc.)           | ### A Level-2 Heading (etc.)                   |
-| ```                                   |                                                |
-+---------------------------------------+------------------------------------------------+
-+---------------------------------------+------------------------------------------------+
-| ```                                   | <p></p>                                        |
-| Line breaks                           | Line breaks                                    |
-| don't matter.                         | don't matter.                                  |
-|                                       |                                                |
-| But blank lines                       | But blank lines                                |
-| create new paragraphs.                | create new paragraphs.                         |
-| ```                                   |                                                |
-+---------------------------------------+------------------------------------------------+
-+---------------------------------------+------------------------------------------------+
-| ```                                   | <p></p>                                        |
-| [Links](http://software-carpentry.org)| [Links](https://software-carpentry.org)        |
-| are created with `[...](...)`.        | are created with `[...](...)`.                 |
-| Or use [named links][data-carp].      | Or use [named links][data_carpentry].          |
-|                                       |                                                |
-| [data-carp]: http://datacarpentry.org |                                                |
-| ```                                   |                                                |
-+---------------------------------------+------------------------------------------------+
-
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Creating Lists in Markdown
-
-Create a nested list in a Markdown cell in a notebook that looks like this:
-
-1. Get funding.
-2. Do work.
-  - Design experiment.
-  - Collect data.
-  - Analyze.
-3. Write up.
-4. Publish.
-
-:::::::::::::::  solution
-
-## Solution
-
-This challenge integrates both the numbered list and bullet list.
-Note that the bullet list is indented 2 spaces so that it is inline with the items of the numbered list.
-
-```
-1.  Get funding.
-2.  Do work.
-    *   Design experiment.
-    *   Collect data.
-    *   Analyze.
-3.  Write up.
-4.  Publish.
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -484,75 +284,7 @@ Python returns the output of the last calculation.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Change an Existing Cell from Code to Markdown
-
-What happens if you write some Python in a code cell
-and then you switch it to a Markdown cell?
-For example,
-put the following in a code cell:
-
-```python
-x = 6 * 7 + 12
-print(x)
-```
-
-
-And then run it with <kbd>Shift</kbd>\+<kbd>Return</kbd> to be sure that it works as a code cell.
-Now go back to the cell and use <kbd>Esc</kbd> then <kbd>m</kbd> to switch the cell to Markdown
-and "run" it with <kbd>Shift</kbd>\+<kbd>Return</kbd>.
-What happened and how might this be useful?
-
-:::::::::::::::  solution
-
-## Solution
-
-The Python code gets treated like Markdown text.
-The lines appear as if they are part of one contiguous paragraph.
-This could be useful to temporarily turn on and off cells in notebooks that get used for multiple purposes.
-
-```python
-x = 6 * 7 + 12 print(x)
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Equations
-
-Standard Markdown (such as we're using for these notes) won't render equations,
-but the Notebook will.
-Create a new Markdown cell
-and enter the following:
-
-```
-$\sum_{i=1}^{N} 2^{-i} \approx 1$
-```
-
-(It's probably easier to copy and paste.)
-What does it display?
-What do you think the underscore, `_`, circumflex, `^`, and dollar sign, `$`, do?
-
-:::::::::::::::  solution
-
-## Solution
-
-The notebook shows the equation as it would be rendered from LaTeX equation syntax.
-The dollar sign, `$`, is used to tell Markdown that the text in between is a LaTeX equation.
-If you're not familiar with LaTeX,  underscore, `_`, is used for subscripts and circumflex, `^`, is used for superscripts.
-A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the subscript and `N` becomes the superscript.
-Similarly, `-i` is in curly braces to make the whole statement the superscript for `2`.
-`\sum` and `\approx` are LaTeX commands for "sum over" and "approximate" symbols.
-
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Closing JupyterLab
 
@@ -563,14 +295,7 @@ Similarly, `-i` is in curly braces to make the whole statement the superscript f
 $ jupyter lab
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Closing JupyterLab
-
-Practice closing and restarting the JupyterLab server.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 [spyder]: https://www.spyder-ide.org/
@@ -587,7 +312,7 @@ Practice closing and restarting the JupyterLab server.
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Python scripts are plain text files.
-- Use the Jupyter Notebook for editing and running Python.
+- Use Spyder for editing and running Python.
 - The Notebook has Command and Edit modes.
 - Use the keyboard and mouse to select and edit cells.
 - The Notebook will turn Markdown into pretty-printed documentation.
