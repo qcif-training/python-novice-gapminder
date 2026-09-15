@@ -241,98 +241,95 @@ conda update spyder-kernels
 
 ## Creating a Python program
 
-To start writing a new Python program, 
-- To start writing a new Python program click the Text File icon under the *Other* header in the Launcher tab of the Main Work Area.
-  - You can also create a new plain text file by selecting the *New -> Text File* from the *File* menu in the Menu Bar.
-- To convert this plain text file to a Python program, select the *Save File As* action from the *File* menu in the Menu Bar 
-  and give your new text file a name that ends with the `.py` extension.
-  - The `.py` extension lets everyone (including the operating system) know that this text file is a Python program.
-  - This is convention, not a requirement.
+When opening Spyder, a tab called temp.py will have been created. You can immediately start writing 
+Python code there. Alternatively, to create a new Python program in a new tab, click **File > New File**, 
+which will create a new tab.
+
+You can also create a new file in the File Explorer pane by right clicking inside a directory, 
+clicking *New File*, and selecting a Python file. Python files will have the `.py` extension; this lets 
+everyone (including the operating system) know that this text file is a Pytho program.
 
 
 
+## Python 101: Maths and comments
+
+We can use the Python interpreter directly as a calculator. We can run code directly in the console,
+or we can write it in the editor. 
+
+For example:
+```python
+3 + 5
+```
+
+```output
+8
+```
+
+Note that if we run this is the Spyder editor with the *Run File* option (Windows shortcut F5; Mac ), 
+it will not display a value; however if we run it in the console, or with the *Run Cell* option (shortcuts 
+<kbd>Ctrl</kbd> + <kbd>Enter</kbd> on Windows, or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac), it will 
+show the result.
+
+
+
+An important part in writing good Python code is legibility. We want to be able to read our own or 
+each other's code, and an important part of that is leaving comments.
+
+A comment is a seciton of text in a Python program that is not run by the computer. We can write
+a comment in Python by using the hash symbol (`#`). When we do so, anything after the `#` is treated
+as a comment; it is not run by the computer. If put at the start of a line, the whole line will be a comment.
+Likewise, we can put a comment partway through a line; only the code after the `#` will be treated as a comment.
+
+A common convention is to also put a space after the `#`. This is not a Python requirement, but a 
+convention to help make the code more readable.
+
+For example:
+
+```python
+# This is a comment
+
+1 + 3 * 8 # We can put a comment after other code
+```
+
+```output
+25
+```
+
+::::::::::::::::::::::::::::::: instructor
+When running the workshop, it is best to be consistent regarding whether you regularly used code 
+cells, or to run the Python programs directly.
+
+::::::::::::::::::::::::::::::::::::::::::
 
 
 ## Creating code cells
 In Spyder we can create and run code cells. A code cell is an isolated piece of code that can be run individually, regardless of its
 place in the program, or can be run as part of the program as a whole.
 
-We can define the start of a new code cell using the hash symbol (`#`) followed by two percent symbols (`%`), as below:
+We can define the start of a new code cell using the hash symbol followed by two percent symbols (`#%%`).
+As the code cell starts with a hash, it also counts as a comment, and we can put other text after
+it if we wish.
 
 ```python
-#%%
+#%% This is a code cell
+
+1 + 3
+
+
+# %% This also starts a code cell, and is the end of the previous cell
+
+3 * 5
 
 ```
-A code cell continues on until a new code cell is defined. You can have as many code cells as you like, or none at all.
 
+
+A code cell continues on until a new code cell is defined. You can have as many code cells as you like, or none at all.
 Note that code cells are a feature used in Spyder (as well as some other IDEs); it is not a core Python function.
 
-
-## Creating a Jupyter Notebook
-
-To open a new notebook click the Python 3 icon under the *Notebook* header in the Launcher tab in
-the main work area. You can also create a new notebook by selecting *New -> Notebook* from the *File* menu in the Menu Bar.
-
-Additional notes on Jupyter notebooks.
-
-- Notebook files have the extension `.ipynb` to distinguish them from plain-text Python programs.
-- Notebooks can be exported as Python scripts that can be run from the command line.
-
-Below is a screenshot of a Jupyter notebook running inside JupyterLab. If you are interested in
-more details, then see the [official notebook documentation][jupyterlab-notebook-docs].
-
-<p align='center'>   <img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
-</p>
+We can run the code in a code cell using the *Run Cell* button, or with the shortcuts 
+<kbd>Ctrl</kbd> + <kbd>Enter</kbd> (Windows), or <kbd>Cmd</kbd> + <kbd>Enter</kbd> (Mac).
 
 
-
-
-
-
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Arranging Documents into Panels of Tabs
-
-In the JupyterLab Main Work Area you can arrange documents into panels of tabs. Here is an
-example from the [official documentation][jupyterlab].
-
-<p align='center'>   <img alt="Multi-panel JupyterLab" src="fig/0_multipanel_jupyterlab_screenshot.png" width="750"/>
-</p>
-
-First, create a text file, Python console, and terminal window and arrange them into three
-panels in the main work area. Next, create a notebook, terminal window, and text file and
-arrange them into three panels in the main work area. Finally, create your own combination of
-panels and tabs. What combination of panels and tabs do you think will be most useful for your
-workflow?
-
-:::::::::::::::  solution
-
-## Solution
-
-After creating the necessary tabs, you can drag one of the tabs to the center of a panel to
-move the tab to the panel; next you can subdivide a tab panel by dragging a tab to the left,
-right, top, or bottom of the panel.
-
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-## The Notebook has Command and Edit modes.
-
-- If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change from gray to blue.
-- These are the **Command** (gray) and **Edit** (blue) modes of your notebook.
-- Command mode allows you to edit notebook-level features, and Edit mode changes the content of cells.
-- When in Command mode (esc/gray),
-  - The <kbd>b</kbd> key will make a new cell below the currently selected cell.
-  - The <kbd>a</kbd> key will make one above.
-  - The <kbd>x</kbd> key will delete the current cell.
-  - The <kbd>z</kbd> key will undo your last cell operation (which could be a deletion, creation, etc).
-- All actions can be done using the menus, but there are lots of keyboard shortcuts to speed things up.
 
 
 
@@ -340,7 +337,7 @@ right, top, or bottom of the panel.
 
 ## More Math
 
-What is displayed when a Python cell in a notebook
+What is displayed when a Python code cell
 that contains several calculations is executed?
 For example, what happens when this cell is executed?
 
