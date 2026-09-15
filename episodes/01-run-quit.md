@@ -152,7 +152,7 @@ and perform many other common operations on files and directories.
 
 ### Help pane
 The help pane is used to show help messages and information on any Python objects.
-You can get help when coding by pressing <kdb>Ctrl</kbd> + <kbd>I</kbd> in front of it,
+You can get help when coding by pressing <kbd>Ctrl</kbd> + <kbd>I</kbd> in front of it,
 either in the Editor or in the Console.
 
 

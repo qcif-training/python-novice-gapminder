@@ -147,6 +147,56 @@ plt.xlabel('Year')
 plt.ylabel('GDP per capita ($)')
 ```
 
+:::::::::::::::::::::::::::::::::: instructor
+We can definitely add some dictionary use in here.
+For example, with the bar plot:
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = pd.read_csv(
+    'data/gapminder_gdp_oceania.csv',
+    index_col='country'
+)
+
+# Extract year from the column names
+years = data.columns.str.replace('gdpPercap_', '')
+
+# Convert year values to integers
+data.columns = years.astype(int)
+
+# Create a dictionary mapping each country to a colour
+country_colours = {
+    'Australia': '#0072B2',
+    'New Zealand': '#D55E00'
+}
+
+# Plot Australia using the colour stored in the dictionary
+data.loc['Australia'].plot(
+    color=country_colours['Australia']
+)
+
+plt.style.use('ggplot')
+
+data.T.plot(
+    kind='bar',
+    color=[
+        country_colours['Australia'],
+        country_colours['New Zealand']
+    ]
+)
+
+plt.ylabel('GDP per capita')
+```
+
+
+
+
+:::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Adding a Legend
