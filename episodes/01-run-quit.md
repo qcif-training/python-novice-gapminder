@@ -59,15 +59,11 @@ Anaconda Python distribution, or can be installed by itself, and has a .
 If you have not already installed the Anaconda Python distribution and Spyder, please see
 [the setup instructions](../learners/setup.md) for installation instructions.
 
-
-
 ## Starting Spyder directly
 To start Spyder, go to your computers application browser and select Spyder. This works regardless
 of whether you installed it standalone or through Anaconda.
  
-
 ### Anaconda Navigator
-
 To start Spyder from the Anaconda Navigator you must first 
 [start Anaconda Navigator (click for detailed instructions on macOS, Windows, and Linux)][anaconda-start-nav]. 
 You can search for Anaconda Navigator via Spotlight on macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), 
@@ -92,8 +88,6 @@ To start Spyder from the command line using Anaconda Prompt, follow these steps:
   - [OPTIONAL]: If using a custom environment, activate it with `conda activate [environment_name]`
 - Launch Spyder by entering the command `spyder`.
 
-
-
 ## The Spyder Interface
 
 Spyder has many features designed to improve the coding and development experience, many of which
@@ -111,10 +105,11 @@ The Menu Bar at the top of Spyder has the top-level menus that expose various ac
 available in JupyterLab along with their keyboard shortcuts (where applicable). The following
 menus are included by default.
 
-- **File:** Actions related to files and directories such as *New*, *Open*, *Close*, *Save*, etc. The *File* menu also includes the *Exit* and *Restart* actions used to shutdown or restart Spyder,.
+- **File:** Actions related to files and directories such as *New*, *Open*, *Close*, *Save*, etc. 
+The *File* menu also includes the *Exit* and *Restart* actions used to shutdown or restart Spyder,.
 - **Edit:** Actions related to editing documents and other activities such as *Undo*, *Cut*, *Copy*, *Paste*, etc.
-- **Search**:
-- **Source:**
+- **Search:** Enables a detailed search function across directories, projects, and files.
+- **Source:** Enables actions relating to formatting and navigating the editor pane.
 - **Run:** Actions for running code in different activities such as programs and code blocks.
 - **Debug:** Actions relating to running code in debug mode, which is used to test code and find any issues.
 - **Consoles:** Actions for managing code consoles. Consoles in Spyder will be explained in more detail below.
@@ -135,7 +130,7 @@ which is a standard convention for suggested maximum line length in Python code.
 
 
 
-<p align='center'>   <img alt="Spyder editor pane" src="fig/0_spyder_editor_pane.png"/></p>
+<p align='center'><img alt="Spyder editor pane" src="fig/0_spyder_editor_pane.png"/></p>
 
 
 :::::::::::::::::::::::::::::::::::::: instructor
