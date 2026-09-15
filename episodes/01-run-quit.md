@@ -135,7 +135,7 @@ which is a standard convention for suggested maximum line length in Python code.
 
 
 
-<p align='center'>   <img alt="Spyder editor pane" src="fig/0_spyder_editor_pane.png" width="250"/></p>
+<p align='center'>   <img alt="Spyder editor pane" src="fig/0_spyder_editor_pane.png"/></p>
 
 
 :::::::::::::::::::::::::::::::::::::: instructor
@@ -173,7 +173,7 @@ view and edit the values of the variable.
 Variables edited in the variable explorer will not affect variables created in the editor, but can affect
 variables called directly in the console. We will go into variables in more detail in the [next chapter](./02-run-quit.md).
 
-<p align='center'>   <img alt="Spyder Variable Explorer" src="fig/0_spyder_variable_explorer.png" width="250"/></p>
+<p align='center'><img alt="Spyder Variable Explorer" src="fig/0_spyder_variable_explorer.png"/></p>
 
 
 ### Debugger pane
@@ -192,7 +192,7 @@ window.
 The console pane (or IPython Console) allows you to execute code directly inside the Python interpreter.
 Like the editor pane, the console pane can hold multiple tabs, each representing a different terminal.
 
-
+<p align='center'><img alt="Spyder IPython console pane" src="fig/0_spyder_terminal.png"/></p>
 
 :::::::::::::::::::::::::::::::::: callout
 ### Other panes
@@ -207,6 +207,13 @@ You can also use this section to hide currently shown panes.
 :::::::::::::::::::::::::::::::::::::::::::
 
 
+
+:::::::::::::::::::::::::::: instructor
+The below spoiler is added to give some information on the Python kernels in the console.
+In particular, it is added for instances where a participant's environment has issues and their
+spyder-kernels installation cannot be found.
+
+:::::::::::::::::::::::::::::::::::::::
 
 
 :::::::::::::::::::::::::::::::::::::::::  spoiler
@@ -227,12 +234,12 @@ external servers.
 Should you need to update or reinstall the kernels used by Spyder in a conda environment, use
 the following commands in Anaconda prompt:
 To install:
-```
+```bash
 conda install conda-forge::spyder-kernels
 ```
 
 To update:
-```
+```bash
 conda update spyder-kernels
 ```
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -251,7 +258,7 @@ everyone (including the operating system) know that this text file is a Pytho pr
 
 
 
-## Python 101: Maths and comments
+##  Maths and strings
 
 We can use the Python interpreter directly as a calculator. We can run code directly in the console,
 or we can write it in the editor. 
@@ -271,7 +278,21 @@ it will not display a value; however if we run it in the console, or with the *R
 show the result.
 
 
+Likewise we can show text. Text values in Python must be written in quotation marks,
+either single quotation marks (`''`), or double quotation marks (`""`).
+For example
+```python
+"Hello world!"
 
+```
+
+```output
+Hello world!
+```
+
+
+
+## Comments
 An important part in writing good Python code is legibility. We want to be able to read our own or 
 each other's code, and an important part of that is leaving comments.
 
@@ -295,14 +316,48 @@ For example:
 25
 ```
 
+
+We can also create longer comments that spread across multiple lines. There are two methods for this.
+The first is to simply use multiple consecutive lines with `#` symbols. For example:
+```python
+# First line of a comment
+# Second line of a comment
+# Third line of a comment
+```
+
+Another method is to use text enclosed with three triple quotes (`'''` or `"""`). For example:
+
+```python
+"""
+This is another way to create a long, multi-line comment.
+It also has some other uses, and is commonly used
+when documenting Python programs.
+"""
+```
+
+
+::::::::::::::::::::::::::::::::::::: spoiler
+### Multiline string literals as comments
+
+Using text in enclosed triple quotes is a convenient way to create longer comments without
+repeatedly uses hashes, though they are technically different to true comments.
+
+The Python compiler does not ignore the enclosed text like it does with a true comment; it
+instead passes it to memory but does not run it if it is not attached to a variable.
+In some instances it can be be used as a docstring, which is used in documentation.
+
+:::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+## Creating code cells
 ::::::::::::::::::::::::::::::: instructor
 When running the workshop, it is best to be consistent regarding whether you regularly used code 
 cells, or to run the Python programs directly.
 
 ::::::::::::::::::::::::::::::::::::::::::
 
-
-## Creating code cells
 In Spyder we can create and run code cells. A code cell is an isolated piece of code that can be run individually, regardless of its
 place in the program, or can be run as part of the program as a whole.
 
@@ -328,8 +383,6 @@ Note that code cells are a feature used in Spyder (as well as some other IDEs); 
 
 We can run the code in a code cell using the *Run Cell* button, or with the shortcuts 
 <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (Windows), or <kbd>Cmd</kbd> + <kbd>Enter</kbd> (Mac).
-
-
 
 
 
@@ -380,10 +433,10 @@ Python returns the output of the last calculation.
 
 - Python programs are plain text files.
 - Use Spyder for editing and running Python.
-- The Notebook has Command and Edit modes.
-- Use the keyboard and mouse to select and edit cells.
-- The Notebook will turn Markdown into pretty-printed documentation.
-- Markdown does most of what HTML does.
+- You can run maths or show text directly in the Python interpreter
+- Spyder can optionally have code cells which can be run independently.
+
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

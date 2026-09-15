@@ -33,7 +33,7 @@ the [Spyder installation guide][spyder-standalone].
 - Select the installer for your computer's operating system
 - Double click the installer file to open the installer on Windows or Mac OS
     - On Linux systems, use the bash command `bash path/to/downloaded/Spyder-Linux-x86_64.sh`
-- If a security warning pops up, you may need to click `Yes`, `OK`, `Open`, or `Allow`, or on Windoes, `More Info` followed by `Run Anyway`.
+- If a security warning pops up, you may need to click `Yes`, `OK`, `Open`, or `Allow`, or on Windows, `More Info` followed by `Run Anyway`.
 
 
 
@@ -49,10 +49,12 @@ Alternatively, installing and using Spyder directly can be the much simpler opti
 
 
 ## Installing Python and Spyder Using Anaconda
-For this workshop, we will use [Spyder][spyder] as an integrated development environment (IDE), which we will install using the Anaconda Python Distribution.
-We have the installation steps provided here, but please check the [Spyder installation Guide][spyder-install] or the
+For this workshop, we will use [Spyder][spyder] as an integrated development environment (IDE), 
+which we will install using the Anaconda Python Distribution. We have the installation steps provided 
+here, but please check the [Spyder installation Guide][spyder-install] or the 
 [Anaconda installation guide][anaconda-install] if you have any issues.
-Installing the Anaconda Distribution will automatically install Spyder on your computer, along with Python and Jupyter Notebook.
+Installing the Anaconda Distribution will automatically install Spyder on your computer, along with 
+Python and Jupyter Notebook.
 
 First, we need to install Anaconda, which has installation steps for Windows, MacOS, and Linux.
 The steps for installing the Anaconda distribution is found below for each operating system:
